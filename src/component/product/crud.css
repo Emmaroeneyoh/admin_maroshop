@@ -1,0 +1,46 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+body{
+    margin-top:20px!important;
+    background:#f8f8f8!important;
+}
+.fa-photo
+{
+    opacity: 0.8;
+}
+.itemdiv
+{
+    width: 35px; height: 35px; border-radius: 3px;
+}
+
+.paginate {
+    width: 80%;
+    list-style: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.paginate a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #2b2eff;
+    color:#2b2eff ;
+    cursor: pointer;
+    text-decoration: none;
+}
+.paginate a:hover  {
+    color: white;
+    background-color:#2b2eff ;
+}
+.activeClassName a {
+    background-color:#2b2eff ;
+}
+
+.nextLinkClassName , .previousLinkClassName {
+    text-decoration: none;
+}
+@media (max-width:576px) {
+    .paginate {
+        margin-top: 10px;
+    }
+}
