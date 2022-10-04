@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import axios from 'axios'
-const url = 'http://localhost:9000'
+const url = 'https://emmaroempire.com/server'
 
 const initialState = {
     user : {},

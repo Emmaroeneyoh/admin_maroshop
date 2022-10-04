@@ -100,7 +100,7 @@ function  Getcat() {
                             </tr>
                         </thead>
                             <tbody>
-                                              {cat.length >= 0 ? cat.filter((val) => {
+                                              {cat.length > 0 ? cat.filter((val) => {
                                   if (search === '') {
                                       return val
                                   } else if (val.category.toLowerCase().includes(search.toLowerCase())) {
