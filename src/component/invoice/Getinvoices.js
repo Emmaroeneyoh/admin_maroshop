@@ -61,9 +61,7 @@ function GetInvoices() {
               <div class="col-12  mb-3">
                 <div class="card">
                 <div class="card-body">
-                    <div class="text-center px-xl-3">
-                    <Link to={'/create/admin'}><button class="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">New User</button></Link>
-                    </div>
+                   
                     <hr class="my-3" />
                     <div className="row">
                     <div className="col-12-sm col-md-8">

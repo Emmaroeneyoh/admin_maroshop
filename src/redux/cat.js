@@ -146,6 +146,7 @@ const adminslice = createSlice({
         .addCase(GetCategories.rejected, (state, action) => {
             state.loading = 'failed'
             state.error = action.payload
+            alert(action.payload)
             state.success = false
             
         })

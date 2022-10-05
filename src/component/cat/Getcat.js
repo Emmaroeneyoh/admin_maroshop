@@ -57,7 +57,7 @@ function  Getcat() {
                 <div class="card">
                 <div class="card-body">
                     <div class="text-center px-xl-3">
-                    <Link to={'/create/admin'}><button class="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">New User</button></Link>
+                    <Link to={'/create/category'}><button class="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">New Category</button></Link>
                     </div>
                     <hr class="my-3" />
                     <div className="row">

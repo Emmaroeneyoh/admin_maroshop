@@ -49,7 +49,7 @@ export const AdminSignin = createAsyncThunk(
     'Admnsignin',
     async (values, { rejectWithValue }) => {
         try {
-            const token = await axios.post(`${url}/admin/signin`, { 
+            const token = await axios.post(`${url}/admin/login`, { 
                 email:values.email,
                 password:values.password
             })
@@ -114,6 +114,7 @@ const adminslice = createSlice({
         .addCase(AdminSignup.rejected, (state, action) => {
             state.loading = 'failed'
             state.error = action.payload
+            alert(action.payload)
             state.success = false
             
         })
@@ -132,6 +133,7 @@ const adminslice = createSlice({
         .addCase(AdminSignin.rejected, (state, action) => {
             state.loading = 'failed'
             state.error = action.payload
+            alert(action.payload)
             state.success = false
             
         })

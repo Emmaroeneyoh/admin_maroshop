@@ -17,6 +17,7 @@ import Getprod from "./component/product/GetProd";
 import EditProduct from "./component/product/EditProd";
 import GetUser from "./component/user/Getuser";
 import GetInvoices from "./component/invoice/Getinvoices";
+import Signin from "./component/auth/Signin";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
                 <Route exact path='/admins' element={ <Getadmin/>} />
                 <Route exact path='/admins/edit/:id' element={ <EditAdmin/>} />
                   <Route exact path='/create/admin' element={<Signup />} />
+                  <Route exact path='/login' element={<Signin/>} />
                   {/* category  */}
                 <Route exact path='/categories' element={ <Getcat/>} />
                 <Route exact path='/create/category' element={ < CreateCategory/>} />
