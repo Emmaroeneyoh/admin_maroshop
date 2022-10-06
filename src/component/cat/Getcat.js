@@ -1,26 +1,35 @@
 import React from 'react'
 import './crud.css'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import ReactPaginate from 'react-paginate';
 import {GetCategories , adminSignupReset , SearchCategory , DeleteCategory } from '../../redux/cat'
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from 'react';
 import moment from 'moment'
 
-function  Getcat() {
+function Getcat() {
+    
+    const navigate  = useNavigate()
     const [search , setemail] = useState('')
 
     const cat = useSelector((state) => state.category.categories)
+    const {error} = useSelector((state) => state.category)
+    const { user } = useSelector((state) => state.admin)
+    const tokens = user.token
     const dispatch = useDispatch()
 
     //function to call all the admins
     useEffect(() => {
-        dispatch(GetCategories())
-        console.log(cat)
+        dispatch(GetCategories(tokens))
+        console.log('this is token from useefect ; ', tokens)
+        if (error !== '') {
+            console.log('error has occured')
+            navigate('/')
+        }
         return () => {
             dispatch(adminSignupReset())
         }
-    }, [])
+    }, [error])
 
     //function for seaarh 
     

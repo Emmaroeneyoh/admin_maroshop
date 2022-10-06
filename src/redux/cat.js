@@ -19,6 +19,7 @@ export const CreateCat = createAsyncThunk(
         console.log('this is values : ', values)
         try {
             const token = await axios.post(`${url}/category`, { 
+                
                 category:values.category,
             })
             console.log(token)
@@ -35,7 +36,11 @@ export const GetCategories = createAsyncThunk(
     'Getcategories',
     async (values, { rejectWithValue }) => {
         try {
-            const token = await axios.get(`${url}/category`)
+            const token = await axios({
+                method: "get",
+                url: `${url}/category`,
+                headers: { Authorization : `Bearer ${values}` },
+              })
             console.log(token)
             return token.data
         } catch (error) {
@@ -98,7 +103,7 @@ const adminslice = createSlice({
     initialState,
     reducers:{
         adminSignupReset:(state) => {
-         state.error =""
+         state.error = ''
             state.loading = ''
             state.message = ''
             state.success = false

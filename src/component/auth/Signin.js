@@ -25,35 +25,12 @@ function Signin() {
    const emailchange = (e) => {
      setemail(e.target.value)
    }
-   const dobchange = (e) => {
-     setdob(e.target.value)
-   }
- 
-   
-   const userchange = (e) => {
-     setusername(e.target.value)
-   }
- 
-   const rolechange = (e) => {
-     setrole(e.target.value)
-     console.log(e.target.value)
-   }
  
    const passchange = (e) => {
      setpassword(e.target.value)
    }
-   const addresschange = (e) => {
-     setaddress(e.target.value)
-   }
+   
  
-   const phonechange = (e) => {
-     setphone(e.target.value)
-  }
-  
-  const photochange = (e) => {
-    setphoto(e.target.files[0])
-console.log(e.target.files[0])      
-}
  
   
     const dispatch = useDispatch();//this will enable us call any action in the redux;
@@ -61,23 +38,12 @@ console.log(e.target.files[0])
     
    //send data to the backend
 //getting all state
-const wholestate = {email, password, username, role, phone, address, dob, photo }
-   
-const formdata = new FormData()
+const wholestate = {email, password }
 
-formdata.append('blogImage', photo)
-formdata.append('email', email)
-formdata.append('username', username)
-formdata.append('password', password)
-formdata.append('role', role)
-formdata.append('address', address)
-formdata.append('phone', phone)
-formdata.append('dob', dob)
-
-
+  
 const submit = (e) => { 
 e.preventDefault()
-  dispatch(AdminSignin(formdata))
+  dispatch(AdminSignin(wholestate))
  
   }
   

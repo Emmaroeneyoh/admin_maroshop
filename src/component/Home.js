@@ -1,6 +1,17 @@
 import React from 'react'
 import List from './List'
+import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect } from 'react';
+import {adminSignupReset} from '../redux/cat'
 function Home() {
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        
+        return () => {
+            dispatch(adminSignupReset())
+        }
+    })
   return (
       <>
           

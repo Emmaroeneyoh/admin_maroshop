@@ -9,7 +9,7 @@ import invoice  from "./invoice";
 
 const root = combineReducers({
     admin: admin,
-    user: user,
+    // user: user,
     category: category,
     product: product,
     client: client,
